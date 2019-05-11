@@ -1,8 +1,7 @@
-def upper_case(string_input):
-    for i in string_input:
-        return str(chr(ord(i)-32))
 
-
-print(ord('a'))
-print(ord('A'))
-print(upper_case('adbc'))
+string_word = input("Enter a word: ")
+upper_str = string_word.upper()
+if string_word == upper_str:
+    print("No lowercase letters in: " + string_word)
+else:
+    print(string_word + " is now uppercase " + upper_str)
