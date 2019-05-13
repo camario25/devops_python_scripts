@@ -5,7 +5,7 @@ def main():
         rev_words = ' '.join(user_arr[::-1])
         print("New order is {}".format(rev_words))
     reverse_words()
-    quest = input("Would you like try more words? write 'yes' or 'no'")
+    quest = input("Would you like to try more words? write 'yes' or 'no'")
     if quest == 'no' or quest == 'n':
         exit()
     else:
