@@ -15,12 +15,10 @@ def your_name():
 
 
 def main():
-
-    your_name()
-    quest = input("Would you like to try another name? write 'yes' or 'no'")
-    if quest == 'no' or quest == 'n':
-        exit()
-    else:
+    while True:
         your_name()
+        quest = input("Would you like to try another name? write 'yes' or 'no'")
+        if quest == 'no' or quest == 'n':
+            break
 
 main()
