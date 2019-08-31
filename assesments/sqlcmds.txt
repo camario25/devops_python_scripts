@@ -1,0 +1,7 @@
+sudo mysql
+CREATE DATABASE world;
+USE world;
+SOURCE world.sql;
+
+UPDATE city SET Name='The Town' WHERE ID=3833;
+SELECT * FROM city WHERE District='California';

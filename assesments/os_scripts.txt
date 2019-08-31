@@ -2,12 +2,21 @@ sudo adduser mario_alcantar
 sudo usermod -aG sudo mario_alcantar
 su - mario_alcantar
 
+
+sudo find / -name auth.log
+
+//OR
+
 sudo apt-get update
 sudo apt-get install locate
 sudo updatedb
 sudo locate -i auth.log
 
+
+
 mkdir lab
+//chown lab to change owner
+
 sudo cp /var/log/auth.log ./lab/labdata.txt
 
 sudo ps -A >> ./lab/process.txt
