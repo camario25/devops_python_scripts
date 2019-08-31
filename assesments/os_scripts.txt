@@ -1,0 +1,23 @@
+sudo adduser mario_alcantar
+sudo usermod -aG sudo mario_alcantar
+su - mario_alcantar
+
+sudo apt-get update
+sudo apt-get install locate
+sudo updatedb
+sudo locate -i auth.log
+
+mkdir lab
+sudo cp /var/log/auth.log ./lab/labdata.txt
+
+sudo ps -A >> ./lab/process.txt
+
+sudo head -1 ./lab/labdata.txt >> ./lab/combined.txt & sudo head -1 ./lab/process.txt >> ./lab/combined.txt
+
+sudo apt-get install apache2 mysql-server nmap
+
+sudo nmap 34.229.143.0/24 -sn >> ./lab/scan.txt
+
+cd /var/www/html
+sudo rm /var/www/html/index.html
+sudo wget -l 2 www.craigslist.org
