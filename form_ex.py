@@ -11,7 +11,7 @@ def form():
     person['first-name'] = fname
     print(f"Your first name is {fname}")
     lname = input("Enter last name ").strip()
-    while lname.isalpha() == False:
+    while lname.isalpha() is False:
         print("This first name your provided is not valid")
         lname = input("Enter last name ").strip()
     person['last-name'] = lname
@@ -23,7 +23,7 @@ def form():
     person['email'] = email
     print(f"Your email is {email}")
     zip_code = input("Enter zip code ").strip()
-    while zip_code.isdigit() == False:
+    while zip_code.isdigit() == False or len(zip_code) != 5:
         print("This zip code you provided is not valid")
         zip_code = input("Enter zip code ").strip()
     person['zip-code'] = zip_code
