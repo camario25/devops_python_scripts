@@ -32,8 +32,20 @@ def main():
 
     os.system("/System/Library/PrivateFrameworks/Apple80211.framework/Resources/airport -I | awk -F: '/ SSID/{print $2}'")
 
-    uptime = subprocess.Popen("uptime")
-    print("uptime: %s" %(uptime))
+    # uptime = subprocess.Popen("uptime")
+    # print("uptime: %s" %(uptime))
+
+    uptime = subprocess.Popen("uptime", stdout=subprocess.PIPE)
+    uptime_output = uptime.stdout.read()
+    uptimeDays = str(uptime_output).split(' ')
+    uptimeShortArr = uptimeDays[3:5]
+    uptimeShortArr.append(uptimeDays[6])
+
+    print(uptimeShortArr)
+
+
+    uptimeJoined = ' '.join(uptimeShortArr)
+    print("uptime: %s hrs:mins" %(uptimeJoined))
 
 
 if __name__ == '__main__':
